@@ -11,7 +11,7 @@ protocol which involves a collection class (Evaluator) which authenticates
 students and then passes a serialized Student class over RMI to do some basic
 grading and student result evaluation.
 
-Some of the technologies used here: 
-* Apache commons codec (SHA1, EncodeHex)
-* SnakeYAML YAML parser
-* Java RMI
+Some of the technologies used here:
+ * Apache commons codec (SHA1, EncodeHex)
+ * SnakeYAML YAML parser
+ * Java RMI
