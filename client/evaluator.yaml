@@ -1,0 +1,4 @@
+settings:
+  service_address: 127.0.0.1
+  service_name: evaluator
+  port: 32717

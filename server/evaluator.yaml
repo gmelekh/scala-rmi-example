@@ -1,0 +1,10 @@
+settings:
+  service_address: 127.0.0.1
+  service_name: evaluator
+  port: 32717
+
+students:
+  john:
+    studentid: 0991300
+    password: 0c7cc0fdbb9aaeab4f408f9ad1cfcacdcd85474c
+    salt: D458728A0BBFB530EE
