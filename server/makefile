@@ -4,8 +4,7 @@ CLASSPATH = ../lib/*:../common/*:.
 %.class: %.scala
 	$(SCALAC) -unchecked -cp $(CLASSPATH) $<
 
-Server.class: ../common/Student.class ../common/Evaluator.class Server.scala EvaluatorImpl.class StudentImpl.class ../common/Config.class
-
+Server.class: ../common/Student.class ../common/Evaluator.class ../common/Config.class Server.scala StudentImpl.class EvaluatorImpl.class
 all: Server.class
 
 clean:
