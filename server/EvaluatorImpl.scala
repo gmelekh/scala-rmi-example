@@ -36,8 +36,9 @@ class EvaluatorImpl(configFile: String) extends Evaluator {
     val registry = LocateRegistry.createRegistry(port)
 
     // Register this object as the RMI handler
-    registry.rebind("//" + address + ":" + port.toString + "/" + name, stub)
-    println("Server ready")
+    val url = "//" + address + ":" + port.toString + "/" + name
+    registry.rebind(url, stub)
+    println("Server ready, java.RMI server listening on " + url)
 
   } catch {
     case e: java.rmi.server.ExportException =>
