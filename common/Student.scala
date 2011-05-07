@@ -3,6 +3,7 @@ import java.rmi.RemoteException
 
 class DisqualifiedException(msg: String) extends RuntimeException(msg)
 class TooManyResultsException(msg: String) extends RuntimeException(msg)
+class InvalidResultException(msg: String) extends RuntimeException(msg)
 
 trait Student extends Remote {
   @throws(classOf[RemoteException])

@@ -83,6 +83,10 @@ class StudentImpl(
       throw new TooManyResultsException("Too many results for student, no more can be added")
     }
 
+    if(result < 0 || result > 100) {
+      throw new InvalidResultException("Invalid result, please enter another")
+    }
+
     // Add items to the back of the list
     results ++= List(result)
 
