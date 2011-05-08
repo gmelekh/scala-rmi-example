@@ -8,4 +8,5 @@ Server.class: ../common/Student.class ../common/Evaluator.class ../common/Config
 all: Server.class
 
 clean:
+	rm server
 	rm *.class
