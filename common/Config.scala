@@ -28,7 +28,7 @@ class Config(file: String) {
 
   // Process the top level setting keys, grabbing the settings and student maps and
   // saving them as scala types
-  def processConfig[K, V](map: Map[K, V]): Unit = {
+  private def processConfig[K, V](map: Map[K, V]): Unit = {
     for (entry <- map) {
       try {
         entry match {
