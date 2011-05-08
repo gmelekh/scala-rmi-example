@@ -104,7 +104,7 @@ object Client {
     println("Unable to connect to server, are you sure it's running?");
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]) : Unit = {
     try {
       val config = new Config(configFile)
 
