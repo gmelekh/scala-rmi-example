@@ -1,12 +1,11 @@
-SCALAC = scalac
-CLASSPATH = ../lib/*:../common/*:.
+include ../common/makefile
 
-%.class: %.scala
-	$(SCALAC) -unchecked -cp $(CLASSPATH) $<
+server.jar: Student.class Evaluator.class Config.class StudentImpl.class EvaluatorImpl.class Server.class
+	$(JAR) cvfe $@ Server $^ $(SCALA_RUNTIME) ../lib/*.jar
 
-Server.class: ../common/Student.class ../common/Evaluator.class ../common/Config.class Server.scala StudentImpl.class EvaluatorImpl.class
-all: Server.class
+all: server.jar
 
 clean:
-	rm server
-	rm *.class
+	rm server.jar *.class
+
+.PHONY: all clean
