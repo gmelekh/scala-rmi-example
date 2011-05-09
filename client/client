@@ -1,2 +1,2 @@
 #!/bin/sh
-java -Djava.security.policy=../common/no.policy -jar client.jar
+java -Djava.rmi.server.codebase=http://ix/~john/server.jar -Djava.security.policy=../common/no.policy -jar client.jar
