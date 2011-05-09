@@ -6,11 +6,10 @@ import java.rmi.registry.Registry
 import java.rmi.server.UnicastRemoteObject
 
 //
-// Implementatin of the Evaluator RMI object, has a very simple interface: a single
-// method for obtaining a Student RMI object by username, the client app then 
-// interacts with that student.
+// Implementation of the Evaluator RMI object, has a very simple interface: a
+// single method for obtaining a Student RMI object by username, the client app
+// then interacts with that student.
 //
-@serializable
 class EvaluatorImpl(configFile: String) extends Evaluator {
 
   var students = Map.empty[String, Student]
