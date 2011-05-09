@@ -1,0 +1,2 @@
+#!/bin/sh
+java -Djava.security.policy=../common/no.policy -jar client.jar
