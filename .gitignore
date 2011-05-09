@@ -7,3 +7,6 @@ tags
 client/client
 server/server
 lib/*.jar
+build/
+client/client.jar
+server/server.jar
