@@ -64,5 +64,3 @@ class EvaluatorImpl(configFile: String) extends Evaluator {
     println("Unable to bind port, perhaps another server is already running?")
   }
 }
-
-// vim: set ts=4 sw=4 et:
