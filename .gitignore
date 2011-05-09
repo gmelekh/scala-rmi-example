@@ -4,8 +4,6 @@
 *.sw?
 tags
 *.class
-client/client
-server/server
 lib/*.jar
 build/
 client/client.jar
