@@ -25,27 +25,44 @@ class ResultWindow(val student: Student) extends MainFrame {
         
         try {
           var enoughResults = false
-          var maximumResults = false
-          var input = new String
-
-          while (!maximumResults || !(enoughResults && input == "-1")) { 
+          var continue = true
+          while (continue) {
             try {
-              input = JOptionPane.showInputDialog(
+              var input = JOptionPane.showInputDialog(
                 if(enoughResults) {
-                  "Enter Integer Grade, -1 to Quit:"
+                  "Enter Integer Grade, -1 to Stop:"
                 } else {
                   "Enter Integer Grade:"
                 })
+              
+              if(input == null) {
+                // Escape or cancel pressed, clear the results and break out
+                student.clearResults
+                continue = false
 
-              // convert grade from a String to an integer
-              val gradeValue = Integer.parseInt(input)
+              } else {
 
-              val (enough, max) = student.addResult(gradeValue)
-              enoughResults = enough
-              maximumResults = max
+                // convert grade from a String to an integer
+                val gradeValue = Integer.parseInt(input)
+
+                // enough results were entered last round, can finish here
+                if(gradeValue == -1 && enoughResults) {
+                  continue = false
+
+                } else {
+                  val (enough, max) = student.addResult(gradeValue)
+
+                  // Save result of enough results
+                  enoughResults = enough
+
+                  // Should we continue?
+                  continue = continue && !max
+                }
+              }
             } catch {
               // Do nothing if entry is bad, so the dialog just gets shown again
               case e: java.lang.NumberFormatException => null
+              case e: InvalidResultException => null
             }
           }
         } catch {
@@ -80,6 +97,3 @@ class ResultWindow(val student: Student) extends MainFrame {
     textarea.append(message + "\n")
   }
 }
-
-
-// vim: set ts=4 sw=4 et:
