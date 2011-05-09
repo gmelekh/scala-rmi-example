@@ -15,3 +15,10 @@ Some of the technologies used here:
  * Apache commons codec (SHA1, EncodeHex)
  * SnakeYAML YAML parser
  * Java RMI
+
+## Issues
+
+No matter what I couldn't get the jar file to build properly with embedded
+jars, so I've unpacked them to a build directory and included them with the -C
+command. This will do till I figure out a better way.
+
