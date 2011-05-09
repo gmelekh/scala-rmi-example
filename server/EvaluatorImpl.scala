@@ -51,7 +51,8 @@ class EvaluatorImpl(configFile: String) extends Evaluator {
       println("Looking up student: " + username)
       students(username)
     } catch {
-      case e: Exception => throw new RuntimeException(e)
+      // No student found
+      case e: java.util.NoSuchElementException => null
     }
   }
 
