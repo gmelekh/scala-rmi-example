@@ -45,3 +45,23 @@ As seen in the client command line, you'll need to specify a codebase
 repository to download the serialized StudentImpl class. In the code I've used
 a simple local Apache server hosting the server.jar file in my home directory.
 
+Note that the policy specified here is a simple permit all policy, you may
+prefer to set a more restrictive one.
+
+## Configuration
+
+Both the client and server have their own configuration file which is a simple
+YAML format like so for the server:
+
+    settings:
+      service_address: 127.0.0.1
+      service_name: evaluator
+      port: 32717
+
+    students:
+      john:
+        studentid: 0991300
+        password: 0c7cc0fdbb9aaeab4f408f9ad1cfcacdcd85474c
+        salt: D458728A0BBFB530EE
+
+The password in this example is 'password'.
