@@ -12,12 +12,36 @@ students and then passes a serialized Student class over RMI to do some basic
 grading and student result evaluation.
 
 Some of the technologies used here:
-* Apache commons codec (SHA1, EncodeHex)
-* SnakeYAML YAML parser
-* Java RMI
 
-## Issues
+  * Apache commons codec (SHA1, EncodeHex)
+  * SnakeYAML YAML parser
+  * Java RMI
 
-No matter what I couldn't get the jar file to build properly with embedded
-jars, so I've unpacked them to a build directory and included them with the -C
-command. This will do till I figure out a better way.
+## Building
+
+You'll need the following jar files in the lib directory:
+
+    commons-codec-1.5.jar
+    scala-library.jar
+    snakeyaml-1.8.jar
+
+The scala-library.jar should come from your particular version of scala. There
+is a makefile for the client and server, which can be executed with the small
+shell scripts provided.
+
+## Running
+
+The command line to run each program is as follows:
+
+Server:
+
+    java -Djava.security.policy=../common/no.policy -jar server.jar
+
+Client:
+
+    java -Djava.rmi.server.codebase=http://127.0.0.1/~john/server.jar -Djava.security.policy=../common/no.policy -jar client.jar
+
+As seen in the client command line, you'll need to specify a codebase
+repository to download the serialized StudentImpl class. In the code I've used
+a simple local Apache server hosting the server.jar file in my home directory.
+
