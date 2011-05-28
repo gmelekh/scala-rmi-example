@@ -1,7 +1,7 @@
 include ../common/makefile
 
 client.jar: Student.class Evaluator.class Config.class ResultWindow.class Client.class
-	$(JAR) cvfe $@ Client *.class -C ../build org -C ../build scala -C ../build biz -C ../build com
+	$(JAR) cvfm $@ manifest.mf *.class ../lib/*.jar
 
 all: client.jar
 

@@ -1,0 +1,2 @@
+Class-Path: ../lib/commons-codec-1.5.jar ../lib/scala-library.jar ../lib/snakeyaml-1.8.jar
+Main-Class: Server
